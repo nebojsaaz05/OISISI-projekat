@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Zeljo\\Desktop\\OISISI-projekat\\Sajam_knjiga\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EF02B5C4-9A93-70B9-504B-EBF3CC5FF647}|Sajam_knjiga\\Sajam_knjiga.csproj|c:\\users\\zeljo\\desktop\\oisisi-projekat\\sajam_knjiga\\sajam_knjiga\\model\\posetilac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF02B5C4-9A93-70B9-504B-EBF3CC5FF647}|Sajam_knjiga\\Sajam_knjiga.csproj|solutionrelative:sajam_knjiga\\model\\posetilac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF02B5C4-9A93-70B9-504B-EBF3CC5FF647}|Sajam_knjiga\\Sajam_knjiga.csproj|c:\\users\\zeljo\\desktop\\oisisi-projekat\\sajam_knjiga\\sajam_knjiga\\model\\adresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF02B5C4-9A93-70B9-504B-EBF3CC5FF647}|Sajam_knjiga\\Sajam_knjiga.csproj|solutionrelative:sajam_knjiga\\model\\adresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Posetilac.cs",
+              "DocumentMoniker": "C:\\Users\\Zeljo\\Desktop\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Model\\Posetilac.cs",
+              "RelativeDocumentMoniker": "Sajam_knjiga\\Model\\Posetilac.cs",
+              "ToolTip": "C:\\Users\\Zeljo\\Desktop\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Model\\Posetilac.cs",
+              "RelativeToolTip": "Sajam_knjiga\\Model\\Posetilac.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAqwBkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T20:15:06.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Adresa.cs",
+              "DocumentMoniker": "C:\\Users\\Zeljo\\Desktop\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Model\\Adresa.cs",
+              "RelativeDocumentMoniker": "Sajam_knjiga\\Model\\Adresa.cs",
+              "ToolTip": "C:\\Users\\Zeljo\\Desktop\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Model\\Adresa.cs",
+              "RelativeToolTip": "Sajam_knjiga\\Model\\Adresa.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAYwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T20:14:45.336Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
