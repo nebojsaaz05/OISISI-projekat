@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mila\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Sajam_knjiga.csproj": {}
+    "C:\\Users\\Zeljo\\Desktop\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Sajam_knjiga.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mila\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Sajam_knjiga.csproj": {
+    "C:\\Users\\Zeljo\\Desktop\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Sajam_knjiga.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mila\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Sajam_knjiga.csproj",
+        "projectUniqueName": "C:\\Users\\Zeljo\\Desktop\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Sajam_knjiga.csproj",
         "projectName": "Sajam_knjiga",
-        "projectPath": "C:\\Users\\Mila\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Sajam_knjiga.csproj",
-        "packagesPath": "C:\\Users\\Mila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mila\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\obj\\",
+        "projectPath": "C:\\Users\\Zeljo\\Desktop\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\Sajam_knjiga.csproj",
+        "packagesPath": "C:\\Users\\Zeljo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Zeljo\\Desktop\\OISISI-projekat\\Sajam_knjiga\\Sajam_knjiga\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Mila\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Zeljo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -68,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
