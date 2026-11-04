@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sajam_knjiga")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f24c5102bc63aa0637252e1d87315b3ded3a52ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0ef04d661e83151df8783685afa6368fec9e71b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sajam_knjiga")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sajam_knjiga")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,8 +1,8 @@
-﻿using CRUDExample.Serialization;
+﻿using Sajam_knjiga.Core.Storage.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Text;
-namespace Sajam_knjiga.Model;
+namespace Sajam_knjiga.Core.Model;
 
 public class Adresa : ISerializable
 {

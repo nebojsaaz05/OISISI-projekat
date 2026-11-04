@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using CRUDExample.Serialization;
+using Sajam_knjiga.Core.Storage.Serialization;
 
-namespace Sajam_knjiga.Model;
+namespace Sajam_knjiga.Core.Model;
 
 public enum StatusPosetioca { P, V}
 

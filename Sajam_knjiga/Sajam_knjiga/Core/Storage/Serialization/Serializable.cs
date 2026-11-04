@@ -1,4 +1,4 @@
-﻿namespace CRUDExample.Serialization;
+﻿namespace Sajam_knjiga.Core.Storage.Serialization;
 
 public interface ISerializable
 {

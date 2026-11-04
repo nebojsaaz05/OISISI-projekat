@@ -1,7 +1,7 @@
-using CRUDExample.Model;
-using CRUDExample.Serialization;
+using Sajam_knjiga.Core.Model;
+using Sajam_knjiga.Core.Storage.Serialization;
 
-namespace CRUDExample.Storage;
+namespace Sajam_knjiga.Core.Storage;
 
 /*
  * Klasa koja je zadužena za čuvanje podataka u fajl sistemu.
