@@ -3,6 +3,7 @@
 namespace Sajam_knjiga.Core.Storage.Serialization;
 
 /*
+ * Preuzeto sa vjezbi (CRUDExample, Storage.cs), izmijenjena putanja
  * Generička klasa za serijalizaciju objekta u CSV format.
  * Ova klasa zna kako da serijalizuje bilo koji objekat
  * koji implementira ISerializable interfejs.

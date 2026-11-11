@@ -1,9 +1,9 @@
-using Sajam_knjiga.Core.Model;
 using Sajam_knjiga.Core.Storage.Serialization;
 
 namespace Sajam_knjiga.Core.Storage;
 
 /*
+ * Preuzeto sa vjezbi (CRUDExample, Storage.cs), izmijenjena putanja
  * Klasa koja je zadužena za čuvanje podataka u fajl sistemu.
  * Ova klasa vodi računa da odgovarajući fajl postoji,
  * piše i čita podatke iz njega. Storage korsiti Serializer
@@ -11,12 +11,15 @@ namespace Sajam_knjiga.Core.Storage;
  */
 public class Storage<T> where T : ISerializable, new()
 {
-    private readonly string _fileName = @"../../../Data/{0}"; // umjesto ove nule ide konkretan fajl npr. studenti.txt
+    private readonly string _fileName;
     private readonly Serializer<T> _serializer = new();
 
     public Storage(string fileName)
     {
-        _fileName = string.Format(_fileName, fileName);
+        char s = Path.DirectorySeparatorChar;
+        string folder = $"..{s}..{s}..{s}Data";
+        Directory.CreateDirectory(folder);
+        _fileName = $"{folder}{s}{fileName}";
     }
     public List<T> Load()
     {
