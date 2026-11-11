@@ -6,11 +6,11 @@ namespace Sajam_knjiga.Core.Model;
 
 public class Adresa : ISerializable
 {
-    private int id {  get; set; }
-    private string ulica {  get; set; }
-    private string broj { get; set; }
-    private string grad {  get; set; }
-    private string drzava { get; set; }
+    public int Id {  get; set; }
+    public string Ulica {  get; set; }
+    public string Broj { get; set; }
+    public string Grad {  get; set; }
+    public string Drzava { get; set; }
 
     public Adresa()
     {
@@ -18,46 +18,46 @@ public class Adresa : ISerializable
 
     public Adresa (string ulica, string broj, string grad, string drzava)
     {
-        this.ulica = ulica;
-        this.broj = broj;
-        this.grad = grad;
-        this.drzava = drzava;
+        Ulica = ulica;
+        Broj = broj;
+        Grad = grad;
+        Drzava = drzava;
     }
 
     public Adresa(int id, string ulica, string broj, string grad, string drzava)
     {
-        this.id = id;
-        this.ulica = ulica;
-        this.broj = broj;
-        this.grad = grad;
-        this.drzava = drzava;
+        Id = id;
+        Ulica = ulica;
+        Broj = broj;
+        Grad = grad;
+        Drzava = drzava;
     }
 
     public override string ToString()
     {
-        return $"ID: {id,5} | Ulica: {ulica,20} | Broj: {broj,5} | Grad: {grad, 20} | Drzava: {drzava, 20} |";
+        return $"ID: {Id,5} | Ulica: {Ulica,20} | Broj: {Broj,5} | Grad: {Grad, 20} | Drzava: {Drzava, 20} |";
     }
 
     public string[] ToCSV()
     {
         string[] csvValues =
         {
-            id.ToString(),
-            ulica,
-            broj,
-            grad,
-            drzava
+            Id.ToString(),
+            Ulica,
+            Broj,
+            Grad,
+            Drzava
         };
         return csvValues;
     }
 
     public void FromCSV(string[] values)
     {
-        id = int.Parse(values[0]);
-        ulica = values[1];
-        broj = values[2];
-        grad = values[3];
-        drzava = values[4];
+        Id = int.Parse(values[0]);
+        Ulica = values[1];
+        Broj = values[2];
+        Grad = values[3];
+        Drzava = values[4];
     }
 
 }
