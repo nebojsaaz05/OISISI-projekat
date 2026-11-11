@@ -14,6 +14,7 @@ public class Autor : ISerializable
     public string Email { get; set; } = string.Empty;
     public string BrojLicneKarte { get; set; } = string.Empty;
     public int GodineIskustva { get; set; }
+    public List<Knjiga> Knjige { get; set; } = new();
 
     public Autor()
     { 
