@@ -7,10 +7,10 @@ namespace Sajam_knjiga.Core.Model;
 public class Adresa : ISerializable
 {
     public int Id {  get; set; }
-    public string Ulica {  get; set; }
-    public string Broj { get; set; }
-    public string Grad {  get; set; }
-    public string Drzava { get; set; }
+    public string Ulica {  get; set; } = string.Empty;
+    public string Broj { get; set; } = string.Empty;
+    public string Grad {  get; set; } = string.Empty;
+    public string Drzava { get; set; } = string.Empty;
 
     public Adresa()
     {
