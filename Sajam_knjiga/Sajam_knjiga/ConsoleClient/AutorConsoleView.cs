@@ -42,10 +42,13 @@ public class AutorConsoleView
                 ShowAllAutori();
                 break;
             case "2":
+                AddAutor();
                 break;
             case "3":
+                UpdateAutor();
                 break;
             case "4":
+                RemoveAutor();
                 break;
         }
     }
@@ -69,5 +72,100 @@ public class AutorConsoleView
             Console.WriteLine(a);
         }
 
+    }
+
+    private int InputId()
+    {
+        Console.WriteLine("Unesite ID autora: ");
+        return ConsoleViewUtils.SafeInputInt();
+    }
+
+    private Adresa InputAdresa()
+    {
+        Console.WriteLine("Unesite naziv ulice: ");
+        string ulica = ConsoleViewUtils.SafeInputString();
+
+        Console.WriteLine("Unesite broj kuce: ");
+        string broj = ConsoleViewUtils.SafeInputString();
+
+        Console.WriteLine("Unesite naziv grada: ");
+        string grad = ConsoleViewUtils.SafeInputString();
+
+        Console.WriteLine("Unesite naziv drzave: ");
+        string drzava = ConsoleViewUtils.SafeInputString();
+
+        return new Adresa(ulica, broj, grad, drzava);
+    }
+
+    private Autor InputAutor()
+    {
+        Console.WriteLine("Unesite ime autora: ");
+        string ime = ConsoleViewUtils.SafeInputString();
+
+        Console.WriteLine("Unesite prezime autora: ");
+        string prezime = ConsoleViewUtils.SafeInputString();
+
+        Console.WriteLine("Unesite datum rodjenja autora (dd.MM.yyyy): ");
+        DateOnly datumRodjenja = ConsoleViewUtils.SafeInputDate();
+
+        Console.WriteLine("Unesite telefon autora: ");
+        string telefon = ConsoleViewUtils.SafeInputString();
+
+        Console.WriteLine("Unesite email autora: ");
+        string email = ConsoleViewUtils.SafeInputString();
+
+        Console.WriteLine("Unesite broj licne karte autora: ");
+        string brojLK = ConsoleViewUtils.SafeInputString();
+
+        Console.WriteLine("Unesite godine iskustva autora: ");
+        int godIskustva = ConsoleViewUtils.SafeInputInt();
+
+        return new Autor(ime, prezime, datumRodjenja, 0, telefon, email, brojLK, godIskustva);
+    }
+
+    private void AddAutor()
+    {
+        Autor autor = InputAutor();
+        Adresa adresa = InputAdresa();
+        _adresaDao.AddAdresa(adresa);      // sad adresa ima Id
+        autor.AdresaId = adresa.Id;
+        autor.Adresa = adresa;
+        _autorDao.AddAutor(autor);
+        Console.WriteLine("Autor dodat.");
+    }
+
+    private void UpdateAutor()
+    {
+        int id = InputId();
+        Autor? postojeci = _autorDao.GetAutorById(id);
+        if (postojeci is null)
+        {
+            Console.WriteLine("Autor nije pronadjen :(");
+            return;
+        }
+
+        Autor autor = InputAutor();
+        autor.Id = id;
+        autor.AdresaId = postojeci.AdresaId; 
+
+        Adresa adresa = InputAdresa();
+        adresa.Id = postojeci.AdresaId;       
+        _adresaDao.UpdateAdresa(adresa);
+
+        _autorDao.UpdateAutor(autor);
+        Console.WriteLine("Autor izmijenjen.");
+    }
+
+    private void RemoveAutor()
+    {
+        int id = InputId();
+        Autor? removedAutor = _autorDao.RemoveAutor(id);
+        if (removedAutor is null)
+        {
+            Console.WriteLine("Autor nije pronadjen :(");
+            return;
+        }
+
+        Console.WriteLine("Autor obrisan.");
     }
 }
