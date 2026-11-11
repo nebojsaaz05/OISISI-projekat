@@ -8,13 +8,13 @@ namespace Sajam_knjiga.Core.Model;
 
 public class Izdavac: ISerializable
 {
-    public int id { get; set; }
-    public string sifra {  get; set; } = string.Empty;
-    public string naziv { get; set; } = string.Empty;
-    public int sefIzdavacaId { get; set; }
-    public Autor? sefIzdavaca { get; set; }
-    public List<Autor> spisakAutora { get; set; } = new();
-    public List<Knjiga> spisakKnjiga { get; set; } = new();
+    public int Id { get; set; }
+    public string Sifra {  get; set; } = string.Empty;
+    public string Naziv { get; set; } = string.Empty;
+    public int SefIzdavacaId { get; set; }
+    public Autor? SefIzdavaca { get; set; }
+    public List<Autor> SpisakAutora { get; set; } = new();
+    public List<Knjiga> SpisakKnjiga { get; set; } = new();
 
     public Izdavac() 
     {
@@ -22,41 +22,41 @@ public class Izdavac: ISerializable
 
     public Izdavac(string sifra, string naziv, int sefIzdavacaId)
     {
-        this.sifra = sifra;
-        this.naziv = naziv;
-        this.sefIzdavacaId = sefIzdavacaId;
+        this.Sifra = sifra;
+        this.Naziv = naziv;
+        this.SefIzdavacaId = sefIzdavacaId;
     }
 
     public Izdavac(int id, string sifra, string naziv, int sefIzdavacaId)
     {
-        this.id = id;
-        this.sifra = sifra;
-        this.naziv = naziv;
-        this.sefIzdavacaId = sefIzdavacaId;
+        this.Id = id;
+        this.Sifra = sifra;
+        this.Naziv = naziv;
+        this.SefIzdavacaId = sefIzdavacaId;
     }
 
     public override string ToString()
     {
-        return $"ID: {id,5} | Sifra: {sifra,20} | Naziv: {naziv,20} | SefIzdavacaId: {sefIzdavacaId,5} |";
+        return $"ID: {Id,5} | Sifra: {Sifra,20} | Naziv: {Naziv,20} | SefIzdavacaId: {SefIzdavacaId,5} |";
     }
 
     public string[] ToCSV()
     {
         string[] csvValues =
         {
-            id.ToString(),
-            sifra,
-            naziv,
-            sefIzdavacaId.ToString()
+            Id.ToString(),
+            Sifra,
+            Naziv,
+            SefIzdavacaId.ToString()
         };
         return csvValues;
     }
 
     public void FromCSV(string[] values)
     {
-        id = int.Parse(values[0]);
-        sifra = values[1];
-        naziv = values[2];
-        sefIzdavacaId = int.Parse(values[3]);
+        Id = int.Parse(values[0]);
+        Sifra = values[1];
+        Naziv = values[2];
+        SefIzdavacaId = int.Parse(values[3]);
     }
 }
