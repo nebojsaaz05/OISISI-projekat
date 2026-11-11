@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Sajam_knjiga.Core.Storage.Serialization;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
-using Sajam_knjiga.Core.Storage.Serialization;
 
 namespace Sajam_knjiga.Core.Model;
 
@@ -9,74 +10,75 @@ public enum StatusPosetioca { P, V}
 
 public class Posetilac: ISerializable
 {
-    private int id {  get; set; }
-    private string ime {  get; set; }
-    private string prezime { get; set; }
-    private string datum_rodjenja { get; set; }
-    private Adresa adresa { get; set; }
-    private string kontakt_telefon { get; set; }
-    private string e_mail { get; set; }
-    private string br_clanske { get; set; }
-    private int trenutna_godina_clanstva {  get; set; }
-    private StatusPosetioca status { get; set; }
-    private double prosecna_ocena { get; set; }
-    // spisak kupovina (Student 2 neka uradi neophodno, treba knjiga za celokupnu kupovinu)
-    // lista zelja (Student 2 neka uradi neophodno, knjiga fali :( )
+    public int id {  get; set; }
+    public string ime {  get; set; } = string.Empty;
+    public string prezime { get; set; } = string.Empty;
+    public DateOnly datumRodjenja { get; set; }
+    public int adresaId;
+    public Adresa? adresa { get; set; }
+    public string kontaktTelefon { get; set; } = string.Empty;
+    public string eMail { get; set; } = string.Empty;
+    public string brClanske { get; set; } = string.Empty;
+    public int trenutnaGodinaClanstva {  get; set; }
+    public StatusPosetioca status { get; set; }
+    public double prosecnaOcena { get; set; }
+    public List<Knjiga> spisakKupovina { get; set; } = new();
+    public List<Knjiga> listaZelja { get; set; } = new();
 
     public Posetilac()
     {
     }
 
-    public Posetilac(string ime, string prezime, string datum_rodjenja, Adresa adresa, string kontakt_telefon, string e_mail, string br_clanske, int trenutna_godina_clanstva, StatusPosetioca status, double prosecna_ocena)
+    public Posetilac(string ime, string prezime, DateOnly datumRodjenja, int adresaId, string kontaktTelefon, string eMail, string brClanske, int trenutnaGodinaClanstva, StatusPosetioca status, double prosecnaOcena)
     {
         this.ime = ime;
         this.prezime = prezime;
-        this.datum_rodjenja = datum_rodjenja;
-        this.adresa = adresa;
-        this.kontakt_telefon = kontakt_telefon;
-        this.e_mail = e_mail;
-        this.br_clanske = br_clanske;
-        this.trenutna_godina_clanstva = trenutna_godina_clanstva;
+        this.datumRodjenja = datumRodjenja;
+        this.adresaId = adresaId;
+        this.kontaktTelefon = kontaktTelefon;
+        this.eMail = eMail;
+        this.brClanske = brClanske;
+        this.trenutnaGodinaClanstva = trenutnaGodinaClanstva;
         this.status = status;
-        this.prosecna_ocena = prosecna_ocena;
+        this.prosecnaOcena = prosecnaOcena;
     }
 
-    public Posetilac(int id, string ime, string prezime, string datum_rodjenja, Adresa adresa, string kontakt_telefon, string e_mail, string br_clanske, int trenutna_godina_clanstva, StatusPosetioca status, double prosecna_ocena)
+    public Posetilac(int id, string ime, string prezime, DateOnly datumRodjenja, int adresaId, string kontaktTelefon, string eMail, string brClanske, int trenutnaGodinaClanstva, StatusPosetioca status, double prosecnaOcena)
     {
         this.id = id;
         this.ime = ime;
         this.prezime = prezime;
-        this.datum_rodjenja = datum_rodjenja;
-        this.adresa = adresa;
-        this.kontakt_telefon = kontakt_telefon;
-        this.e_mail = e_mail;
-        this.br_clanske = br_clanske;
-        this.trenutna_godina_clanstva = trenutna_godina_clanstva;
+        this.datumRodjenja = datumRodjenja;
+        this.adresaId = adresaId;
+        this.kontaktTelefon = kontaktTelefon;
+        this.eMail = eMail;
+        this.brClanske = brClanske;
+        this.trenutnaGodinaClanstva = trenutnaGodinaClanstva;
         this.status = status;
-        this.prosecna_ocena = prosecna_ocena;
+        this.prosecnaOcena = prosecnaOcena;
     }
 
     public override string ToString()
     {
-        return $"ID: {id,5} | Ime: {ime,20} | Prezime: {prezime,20} | Datum Rodjenja: {datum_rodjenja,20} | " + adresa.ToString() +
-               $" Kontakt Telefon: {kontakt_telefon,20} | E-mail: {e_mail,30} | Broj clanske karte: {br_clanske,10} | Trenutna godina clanstva: {id,2} |" +
-               $" Status: {status,1} | Prosecna ocena: {prosecna_ocena,5}"; 
+        return $"ID: {id,5} | Ime: {ime,20} | Prezime: {prezime,20} | Datum rodjenja: {datumRodjenja:dd.MM.yyyy} | Adresa ID: {adresaId,5} | Kontakt Telefon: {kontaktTelefon,11} | " +
+               $"E-mail: {eMail,30} | Broj clanske: {brClanske,20} | Trenutna godina clanstva: {trenutnaGodinaClanstva,4} | Status: {status,1} | Prosecna ocena: {prosecnaOcena,4} |";
     }
 
     public string[] ToCSV()
     {
-        // Treba dodati adresu i status posto je enum
         string[] csvValues =
         {
             id.ToString(),
             ime,
             prezime,
-            datum_rodjenja,
-            kontakt_telefon,
-            e_mail,
-            br_clanske,
-            trenutna_godina_clanstva.ToString(),
-            prosecna_ocena.ToString(),
+            datumRodjenja.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture),
+            adresaId.ToString(),
+            kontaktTelefon,
+            eMail,
+            brClanske,
+            trenutnaGodinaClanstva.ToString(),
+            status.ToString(),
+            prosecnaOcena.ToString()
         };
         return csvValues;
     }
@@ -86,11 +88,13 @@ public class Posetilac: ISerializable
         id = int.Parse(values[0]);
         ime = values[1];
         prezime = values[2];
-        datum_rodjenja = values[3];
-        kontakt_telefon = values[4];
-        e_mail = values[5];
-        br_clanske = values[6];
-        trenutna_godina_clanstva = int.Parse(values[7]);
-        prosecna_ocena = double.Parse(values[8]);
+        datumRodjenja = DateOnly.ParseExact(values[3], "dd.MM.yyyy", CultureInfo.InvariantCulture);
+        adresaId = int.Parse(values[4]);
+        kontaktTelefon = values[5];
+        eMail = values[6];
+        brClanske = values[7];
+        trenutnaGodinaClanstva = int.Parse(values[8]);
+        status = (values[9] == "P") ? StatusPosetioca.P : StatusPosetioca.V;
+        prosecnaOcena = double.Parse(values[10]);
     }
 }
