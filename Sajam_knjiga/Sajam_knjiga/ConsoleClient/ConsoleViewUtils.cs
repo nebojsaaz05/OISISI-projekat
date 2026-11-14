@@ -41,18 +41,6 @@ public static class ConsoleViewUtils
         return input;
     }
 
-    public static int SafeInputStatus()
-    {
-        string rawInput = Console.ReadLine() ?? string.Empty;
-        int input;
-        while (!int.TryParse(rawInput, out input) || (input != 1 || input != 2))
-        {
-            Console.WriteLine("Neispravan unos, pokusajte ponovo: ");
-            rawInput = Console.ReadLine() ?? string.Empty;
-        }
-        return input;
-    }
-
     public static double SafeInputDouble()
     {
         string rawInput = Console.ReadLine() ?? string.Empty;

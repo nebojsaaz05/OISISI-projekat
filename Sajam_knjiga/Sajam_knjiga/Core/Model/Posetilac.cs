@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Sajam_knjiga.Core.Model;
 
-public enum StatusPosetioca { P, V}
+public enum StatusPosetioca { R, V}
 
 public class Posetilac: ISerializable
 {
@@ -94,7 +94,7 @@ public class Posetilac: ISerializable
         EMail = values[6];
         BrClanske = values[7];
         TrenutnaGodinaClanstva = int.Parse(values[8]);
-        Status = (values[9] == "P") ? StatusPosetioca.P : StatusPosetioca.V;
+        Status = (values[9] == "P") ? StatusPosetioca.R : StatusPosetioca.V;
         ProsecnaOcena = double.Parse(values[10]);
     }
 }
