@@ -4,6 +4,7 @@ using System.Text;
 
 using Sajam_knjiga.Core.Model;
 using Sajam_knjiga.Core.DAO;
+using System.Runtime.Versioning;
 
 namespace Sajam_knjiga.ConsoleClient;
 
@@ -125,8 +126,14 @@ public class PosetilacConsoleView
         Console.WriteLine("Unesite godine clanstva posetioca: ");
         int godClanstva = ConsoleViewUtils.SafeInputInt();
 
-        Console.WriteLine("Uneiste status posetioca: \n1. Redovan\n2. VIP");
-        StatusPosetioca statusP = (ConsoleViewUtils.SafeInputStatus() == 1) ? StatusPosetioca.P : StatusPosetioca.V;
+        int unosStatus = 0;
+        do
+        {
+            Console.WriteLine("Uneiste status posetioca: \n1. Redovan\n2. VIP");
+            unosStatus = ConsoleViewUtils.SafeInputInt();
+        }
+        while (unosStatus != 1 && unosStatus != 2);
+        StatusPosetioca statusP = (unosStatus == 1) ? StatusPosetioca.R : StatusPosetioca.V;
 
         Console.WriteLine("Unesite prosecnu ocenu posetioca: ");
         double prosecnaOcena = ConsoleViewUtils.SafeInputDouble();
