@@ -52,4 +52,16 @@ public static class ConsoleViewUtils
         }
         return input;
     }
+
+    public static decimal SafeInputDecimal()
+    {
+        string rawInput = Console.ReadLine() ?? string.Empty;
+        decimal input;
+        while (!decimal.TryParse(rawInput, out input))
+        {
+            Console.WriteLine("Neispravan broj, pokusajte ponovo: ");
+            rawInput = Console.ReadLine() ?? string.Empty;
+        }
+        return input;
+    }
 }
