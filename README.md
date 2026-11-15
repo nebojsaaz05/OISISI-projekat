@@ -3,6 +3,7 @@ Student 1 - Nebojsa Zeljic
 - DAO: PosetilacDAO, PosetilacKnjigaDAO
 - Posetilac u konzoli: #prikaz_posetilaca ,#dodavanje_posetioca ,#izmena_posetioca, #brisanje_posetioca
 - Knjige u konzoli: #dodavanje_knjige ,#izmena_knjige
+  
 Student 2 - Mila Damjanovic
 - Modeli: Adresa, Autor, Knjiga, AutorKnjiga (#adresa, #autor, #knjiga)
 - Storage (putanja preko Path.DirectorySeparatorChar)
