@@ -24,4 +24,13 @@ public static class Povezivanje
             knjiga.Autori.Add(autor);
         }
     }
+
+    public static void PoveziPosetioce(AdresaDAO adresaDao, PosetilacDAO posetilacDao)
+    {
+        // 3. Posetilac -> adresa
+        foreach (Posetilac posetilac in posetilacDao.GetAllPosetioci())
+        {
+            posetilac.Adresa = adresaDao.GetAdresaById(posetilac.AdresaId);
+        }
+    }
 }
