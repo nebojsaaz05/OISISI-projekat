@@ -15,7 +15,8 @@ class Program
         KnjigaDAO knjigaDao = new KnjigaDAO(autorKnjigaDao);
         PosetilacDAO posetilacDao = new PosetilacDAO(adresaDao, posetilacKnjigaLZ, posetilacKnjigaSK);
 
-        Povezivanje.PoveziAutore(autorDao, adresaDao, knjigaDao, autorKnjigaDao, posetilacDao);
+        Povezivanje.PoveziAutore(autorDao, adresaDao, knjigaDao, autorKnjigaDao);
+        Povezivanje.PoveziPosetioce(adresaDao, posetilacDao);
 
         AutorConsoleView autorView = new AutorConsoleView(autorDao, adresaDao);
         KnjigaConsoleView knjigaView = new KnjigaConsoleView(knjigaDao);

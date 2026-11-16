@@ -6,7 +6,7 @@ namespace Sajam_knjiga.Core.Utils;
 // Po uzoru na uvezivanje objekata u Program.cs iz SerializationExample (vjezbe)
 public static class Povezivanje
 {
-    public static void PoveziAutore(AutorDAO autorDao, AdresaDAO adresaDao, KnjigaDAO knjigaDao, AutorKnjigaDAO autorKnjigaDao, PosetilacDAO posetilacDao)
+    public static void PoveziAutore(AutorDAO autorDao, AdresaDAO adresaDao, KnjigaDAO knjigaDao, AutorKnjigaDAO autorKnjigaDao)
     {
         // 1. autor -> adresa
         foreach (Autor autor in autorDao.GetAllAutori())
@@ -23,7 +23,10 @@ public static class Povezivanje
             autor.Knjige.Add(knjiga);
             knjiga.Autori.Add(autor);
         }
+    }
 
+    public static void PoveziPosetioce(AdresaDAO adresaDao, PosetilacDAO posetilacDao)
+    {
         // 3. Posetilac -> adresa
         foreach (Posetilac posetilac in posetilacDao.GetAllPosetioci())
         {
