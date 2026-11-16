@@ -40,7 +40,7 @@ public class Adresa : ISerializable
         ret_str += "Ulica: " + Ulica + "\n";
         ret_str += "Broj: " + Broj + "\n";
         ret_str += "Grad: " + Grad + "\n";
-        ret_str += "Drzava: " + Id.ToString();
+        ret_str += "Drzava: " + Drzava;
         return ret_str;
     }
 
