@@ -37,7 +37,12 @@ public class Izdavac: ISerializable
 
     public override string ToString()
     {
-        return $"ID: {Id,5} | Sifra: {Sifra,20} | Naziv: {Naziv,20} | SefIzdavacaId: {SefIzdavacaId,5} |";
+        string ret_str = "";
+        ret_str += "ID: " + Id.ToString() + "\n";
+        ret_str += "Sifra: " + Sifra + "\n";
+        ret_str += "Naziv: " + Naziv + "\n";
+        ret_str += "Sef Izdavaca ID: " + SefIzdavacaId;
+        return ret_str;
     }
 
     public string[] ToCSV()

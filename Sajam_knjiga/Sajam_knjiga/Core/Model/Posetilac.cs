@@ -60,8 +60,19 @@ public class Posetilac: ISerializable
 
     public override string ToString()
     {
-        return $"ID: {Id,5} | Ime: {Ime,20} | Prezime: {Prezime,20} | Datum rodjenja: {DatumRodjenja:dd.MM.yyyy} | Adresa ID: {AdresaId,5} | Kontakt Telefon: {KontaktTelefon,11} | " +
-               $"E-mail: {EMail,30} | Broj clanske: {BrClanske,20} | Trenutna godina clanstva: {TrenutnaGodinaClanstva,4} | Status: {Status,1} | Prosecna ocena: {ProsecnaOcena,4} |";
+        string ret_str = "";
+        ret_str += "ID: " + Id.ToString() + "\n";
+        ret_str += "Ime: " + Ime + "\n";
+        ret_str += "Prezime: " + Prezime + "\n";
+        ret_str += "Datum rodjenja: " + DatumRodjenja.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture) + "\n";
+        ret_str += "Adresa ID: " + AdresaId + "\n";
+        ret_str += "Telefon: " + KontaktTelefon + "\n";
+        ret_str += "Email: " + EMail + "\n";
+        ret_str += "Broj clanske: " + BrClanske + "\n";
+        ret_str += "Trenutna godina clanstva: " + TrenutnaGodinaClanstva.ToString() + "\n";
+        ret_str += "Status: " + ((Status == StatusPosetioca.R) ? "Redovan" : "VIP") + "\n";
+        ret_str += "Prosecna ocena: " + ProsecnaOcena.ToString();
+        return ret_str;
     }
 
     public string[] ToCSV()

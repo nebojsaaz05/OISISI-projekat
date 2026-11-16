@@ -69,7 +69,9 @@ public class AutorConsoleView
         Console.WriteLine("Autori: ");
         foreach (Autor a in autori)
         {
+            Console.WriteLine("=====================================================================");
             Console.WriteLine(a);
+            Console.WriteLine("=====================================================================");        
         }
 
     }

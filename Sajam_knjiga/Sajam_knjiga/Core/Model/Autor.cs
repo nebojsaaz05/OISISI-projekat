@@ -44,7 +44,17 @@ public class Autor : ISerializable
     }
     public override string ToString()
     {
-        return $"ID: {Id,5} | Ime: {Ime,20} | Prezime: {Prezime,20} | Datum rodjenja: {DatumRodjenja:dd.MM.yyyy} | AdresaId: {AdresaId,20} | Telefon: {Telefon, 11} | Email: {Email, 20} | Broj licne karte: {BrojLicneKarte, 15} | Godine Iskustva: {GodineIskustva, 10} |";
+        string ret_str = "";
+        ret_str += "ID: " + Id.ToString() + "\n";
+        ret_str += "Ime: " + Ime + "\n";
+        ret_str += "Prezime: " + Prezime + "\n";
+        ret_str += "Datum rodjenja: " + DatumRodjenja.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture) + "\n";
+        ret_str += "Adresa ID: " + AdresaId + "\n";
+        ret_str += "Telefon: " + Telefon + "\n";
+        ret_str += "Email: " + Email + "\n";
+        ret_str += "Broj licne karte: " + BrojLicneKarte + "\n";
+        ret_str += "Godine iskustva: " + GodineIskustva.ToString();
+        return ret_str;
     }
 
     public string[] ToCSV()

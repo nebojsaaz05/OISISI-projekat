@@ -35,7 +35,13 @@ public class Adresa : ISerializable
 
     public override string ToString()
     {
-        return $"ID: {Id,5} | Ulica: {Ulica,20} | Broj: {Broj,5} | Grad: {Grad, 20} | Drzava: {Drzava, 20} |";
+        string ret_str = "";
+        ret_str += "ID: " + Id.ToString() + "\n";
+        ret_str += "Ulica: " + Ulica + "\n";
+        ret_str += "Broj: " + Broj + "\n";
+        ret_str += "Grad: " + Grad + "\n";
+        ret_str += "Drzava: " + Id.ToString();
+        return ret_str;
     }
 
     public string[] ToCSV()
