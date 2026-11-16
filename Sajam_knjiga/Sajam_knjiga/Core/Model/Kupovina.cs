@@ -42,7 +42,14 @@ public class Kupovina: ISerializable
 
     public override string ToString()
     {
-        return $"ID: {Id,5} | PosetilacID: {PosetilacId,5} | KnjigaID: {KnjigaId,5} | Datum Kupovine: {DatumKupovine:dd.MM.yyyy} | Ocena: {Ocena,1} | Komentar: {Komentar,30} |";
+        string ret_str = "";
+        ret_str += "ID: " + Id.ToString() + "\n";
+        ret_str += "PosetilacID: " + PosetilacId.ToString() + "\n";
+        ret_str += "KnjigaID: " + KnjigaId.ToString() + "\n";
+        ret_str += "Datum kupovine: " + DatumKupovine.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture) + "\n";
+        ret_str += "Ocena: " + Ocena.ToString() + "\n";
+        ret_str += "Komentar: " + Komentar;
+        return ret_str;
     }
 
     public string[] ToCSV()

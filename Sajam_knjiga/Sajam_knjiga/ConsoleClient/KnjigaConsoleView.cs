@@ -68,7 +68,9 @@ public class KnjigaConsoleView
         Console.WriteLine("Knjige: ");
         foreach (Knjiga k in knjige)
         {
+            Console.WriteLine("=====================================================================");
             Console.WriteLine(k);
+            Console.WriteLine("=====================================================================");
         }
 
     }

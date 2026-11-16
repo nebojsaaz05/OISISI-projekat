@@ -47,7 +47,16 @@ public class Knjiga : ISerializable
 
     public override string ToString()
     {
-        return $"ID: {Id,5} | ISBN: {Isbn,17} | Naziv: {Naziv,30} | Zanr: {Zanr,15} | Godina izdanja: {GodinaIzdanja,4} | Cena: {Cena,10:F2} | Broj strana: {BrojStrana,5} | IzdavacId: {IzdavacId,5} |";
+        string ret_str = "";
+        ret_str += "ID: " + Id.ToString() + "\n";
+        ret_str += "ISBN: " + Isbn + "\n";
+        ret_str += "Naziv: " + Naziv + "\n";
+        ret_str += "Zanr: " + Zanr + "\n";
+        ret_str += "Godina izdanja: " + GodinaIzdanja.ToString() + "\n";
+        ret_str += "Cena: " + Cena.ToString() + "\n";
+        ret_str += "Broj strana: " + BrojStrana.ToString() + "\n";
+        ret_str += "Izdavac ID: " + IzdavacId.ToString();
+        return ret_str;
     }
 
     public string[] ToCSV()

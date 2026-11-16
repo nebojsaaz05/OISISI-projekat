@@ -75,7 +75,9 @@ public class PosetilacConsoleView
         Console.WriteLine("Posetioci: ");
         foreach (Posetilac p in posetioci)
         {
+            Console.WriteLine("=====================================================================");
             Console.WriteLine(p);
+            Console.WriteLine("=====================================================================");
         }
 
     }
