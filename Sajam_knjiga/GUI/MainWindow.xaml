@@ -27,10 +27,34 @@
                 <!-- #prikaz_posetilaca (Student 1) -->
             </TabItem>
             <TabItem Header="Autori">
-                <!-- #prikaz_autora (Student 2) -->
+                <DataGrid ItemsSource="{Binding Autori}"
+                          SelectedItem="{Binding SelectedAutor}"
+                          AutoGenerateColumns="False"
+                          SelectionMode="Single"
+                          IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" Width="*"/>
+                        <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}" Width="*"/>
+                        <DataGridTextColumn Header="Broj lične karte" Binding="{Binding BrojLicneKarte}" Width="*"/>
+                        <DataGridTextColumn Header="Datum rođenja" Binding="{Binding DatumRodjenja, StringFormat=dd.MM.yyyy.}" Width="*"/>
+                        <DataGridTextColumn Header="E-mail" Binding="{Binding Email}" Width="2*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </TabItem>
             <TabItem Header="Knjige">
-                <!-- #prikaz_knjiga (Student 2) -->
+                <DataGrid ItemsSource="{Binding Knjige}"
+                          SelectedItem="{Binding SelectedKnjiga}"
+                          AutoGenerateColumns="False"
+                          SelectionMode="Single"
+                          IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ISBN" Binding="{Binding Isbn}" Width="*"/>
+                        <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}" Width="2*"/>
+                        <DataGridTextColumn Header="Cena" Binding="{Binding Cena, StringFormat=N2}" Width="*"/>
+                        <DataGridTextColumn Header="Godina izdanja" Binding="{Binding GodinaIzdanja}" Width="*"/>
+                        <DataGridTextColumn Header="Zanr" Binding="{Binding Zanr}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </TabItem>
         </TabControl>
     </DockPanel>
