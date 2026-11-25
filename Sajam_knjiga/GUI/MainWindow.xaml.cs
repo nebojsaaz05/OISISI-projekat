@@ -63,6 +63,19 @@ namespace GUI
 
         private void Izmeni_Click(object sender, RoutedEventArgs e)
         {
+            if (SelectedAutor == null)
+            {
+                MessageBox.Show("Izaberite autora kog želite da izmijenite!");
+            }
+            else
+            {
+                Autor? autor = _autorDao.GetAutorById(SelectedAutor.Id);
+                if (autor != null)
+                {
+                    UpdateAutor updateAutor = new UpdateAutor(_autorDao, _adresaDao, autor);
+                    updateAutor.Show();
+                }
+            }
         }
 
         private void Obrisi_Click(object sender, RoutedEventArgs e)
