@@ -1,4 +1,5 @@
 ﻿using GUI.DTO;
+using GUI.View;
 using Sajam_knjiga.Core.DAO;      
 using Sajam_knjiga.Core.Model;      
 using Sajam_knjiga.Core.Observer;
@@ -56,6 +57,8 @@ namespace GUI
 
         private void Dodaj_Click(object sender, RoutedEventArgs e)
         {
+            AddAutor addAutor = new AddAutor(_autorDao, _adresaDao);
+            addAutor.Show();
         }
 
         private void Izmeni_Click(object sender, RoutedEventArgs e)
