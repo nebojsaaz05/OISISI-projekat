@@ -15,6 +15,7 @@ public class Knjiga : ISerializable
     public decimal Cena {  get; set; }
     public int BrojStrana { get; set; }
     public int IzdavacId { get; set; }
+    public Izdavac? Izdavac { get; set; }
 
     public List<Autor> Autori { get; set; } = new();
     public List<Posetilac> Kupci { get; set; } = new();
