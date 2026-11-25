@@ -9,22 +9,28 @@
         WindowStartupLocation="CenterScreen">
     
     <DockPanel>
-        <!-- #menu_bar (Student 1) -->
+        <!-- #menu_bar extra nena -->
         <Menu DockPanel.Dock="Top">
         </Menu>
 
-        <!-- #toolbar (Student 2) -->
+        <!-- #toolbar (Student 2) - po uzoru na ObservableCollectionExample (vjezbe 6) -->
         <ToolBar DockPanel.Dock="Top">
+            <Button Click="Dodaj_Click" ToolTip="Dodaj">Dodaj</Button>
+            <Button Click="Izmeni_Click" ToolTip="Izmijeni">Izmijeni</Button>
+            <Button Click="Obrisi_Click" ToolTip="Obriši">Obriši</Button>
+            <Separator/>
+            <TextBox x:Name="PretragaTextBox" Width="200" ToolTip="Unesite kriterijum pretrage"/>
+            <Button Click="Pretraga_Click" ToolTip="Pretraži">Pretraži</Button>
         </ToolBar>
 
-        <!-- #status_bar (Student 1) -->
+        <!-- #status_bar extra nena -->
         <StatusBar DockPanel.Dock="Bottom">
         </StatusBar>
 
         <!-- centralni dio sa tabovima -->
-        <TabControl>
+        <TabControl x:Name="Tabovi">
             <TabItem Header="Posetioci">
-                <!-- #prikaz_posetilaca (Student 1) -->
+                <!-- #prikaz_posetilaca extra nena -->
             </TabItem>
             <TabItem Header="Autori">
                 <DataGrid ItemsSource="{Binding Autori}"
@@ -52,7 +58,7 @@
                         <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}" Width="2*"/>
                         <DataGridTextColumn Header="Cena" Binding="{Binding Cena, StringFormat=N2}" Width="*"/>
                         <DataGridTextColumn Header="Godina izdanja" Binding="{Binding GodinaIzdanja}" Width="*"/>
-                        <DataGridTextColumn Header="Zanr" Binding="{Binding Zanr}" Width="*"/>
+                        <DataGridTextColumn Header="Žanr" Binding="{Binding Zanr}" Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>

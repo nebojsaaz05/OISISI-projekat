@@ -5,7 +5,7 @@ using Sajam_knjiga.Core.Observer;
 using Sajam_knjiga.Core.Utils;      
 using System.Collections.ObjectModel;
 using System.Windows;
-//Po uzoru na MainWindow iz vježbi 6
+// Po uzoru na MainWindow iz CRUDExample (vjezbe 6)
 
 namespace GUI
 {
@@ -25,7 +25,7 @@ namespace GUI
         public MainWindow()
         {
             InitializeComponent();
-            // prozor zauzima 3/4 sirine i visine ekrana (specifikacija 8.5)
+            // prozor zauzima 3/4 sirine i visine ekrana (specifikacija 8.5), Microsoft dokumentacija: SystemParameters
             Width = SystemParameters.PrimaryScreenWidth * 0.75;
             Height = SystemParameters.PrimaryScreenHeight * 0.75;
 
@@ -53,5 +53,22 @@ namespace GUI
             foreach (Knjiga knjiga in _knjigaDao.GetAllKnjige())
                 Knjige.Add(new KnjigaDTO(knjiga));
         }
+
+        private void Dodaj_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Izmeni_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Obrisi_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Pretraga_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
     }
 }
