@@ -1,5 +1,6 @@
 ﻿using Sajam_knjiga.Core.Model;
 using Sajam_knjiga.Core.Storage;
+using Sajam_knjiga.Core.Observer;
 
 namespace Sajam_knjiga.Core.DAO;
 
@@ -15,6 +16,7 @@ public class KnjigaDAO
     private readonly List<Knjiga> _knjige;
     private readonly Storage<Knjiga> _storage;
     private readonly AutorKnjigaDAO _autorKnjigaDao;
+    public Subject KnjigaSubject { get; } = new();
 
     public KnjigaDAO(AutorKnjigaDAO autorKnjigaDao) // kad brisem knjigu moram obrisati i njene veze sa autorima
     {
@@ -35,6 +37,7 @@ public class KnjigaDAO
         knjiga.Id = GenerateId();
         _knjige.Add(knjiga);
         _storage.Save(_knjige);
+        KnjigaSubject.NotifyObservers();
         return knjiga;
     }
 
@@ -52,6 +55,7 @@ public class KnjigaDAO
         staraKnjiga.IzdavacId = knjiga.IzdavacId;
 
         _storage.Save(_knjige);
+        KnjigaSubject.NotifyObservers();
         return staraKnjiga;
     }
 
@@ -64,6 +68,7 @@ public class KnjigaDAO
 
         _knjige.Remove(knjiga);
         _storage.Save(_knjige);
+        KnjigaSubject.NotifyObservers();
         return knjiga;
     }
 
