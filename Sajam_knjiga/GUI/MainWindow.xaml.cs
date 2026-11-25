@@ -19,6 +19,9 @@ namespace GUI
         public MainWindow()
         {
             InitializeComponent();
+            // prozor zauzima 3/4 sirine i visine ekrana (specifikacija 8.5)
+            Width = SystemParameters.PrimaryScreenWidth * 0.75;
+            Height = SystemParameters.PrimaryScreenHeight * 0.75;
         }
     }
 }
