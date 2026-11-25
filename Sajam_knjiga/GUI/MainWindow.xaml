@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Sajam knjiga"
+        WindowStartupLocation="CenterScreen">
+    
+    <DockPanel>
+        <!-- #menu_bar (Student 1) -->
+        <Menu DockPanel.Dock="Top">
+        </Menu>
 
-    </Grid>
+        <!-- #toolbar (Student 2) -->
+        <ToolBar DockPanel.Dock="Top">
+        </ToolBar>
+
+        <!-- #status_bar (Student 1) -->
+        <StatusBar DockPanel.Dock="Bottom">
+        </StatusBar>
+
+        <!-- centralni dio sa tabovima -->
+        <TabControl>
+            <TabItem Header="Posetioci">
+                <!-- #prikaz_posetilaca (Student 1) -->
+            </TabItem>
+            <TabItem Header="Autori">
+                <!-- #prikaz_autora (Student 2) -->
+            </TabItem>
+            <TabItem Header="Knjige">
+                <!-- #prikaz_knjiga (Student 2) -->
+            </TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
