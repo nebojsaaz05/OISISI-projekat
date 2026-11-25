@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+// Preuzeto sa vjezbi 6 (CRUDExample, Observer)
 namespace Sajam_knjiga.Core.Observer
 {
     public class Subject
