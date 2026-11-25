@@ -17,7 +17,7 @@ public class Storage<T> where T : ISerializable, new()
     public Storage(string fileName)
     {
         char s = Path.DirectorySeparatorChar;
-        string folder = $"..{s}..{s}..{s}Data";
+        string folder = $"..{s}..{s}..{s}..{s}Sajam_knjiga{s}Data"; // Putanja po uzoru na Storage.cs iz CRUDExample (vjezbe 5 i 6)
         Directory.CreateDirectory(folder);
         _fileName = $"{folder}{s}{fileName}";
     }
