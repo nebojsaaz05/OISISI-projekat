@@ -12,4 +12,6 @@ Student 2 - Mila Damjanovic
 - Konzola: ConsoleViewUtils, glavni meni
 - Autori u konzoli: #prikaz_autora, #dodavanje_autora, #izmena_autora, #brisanje_autora
 - Knjige u konzoli: #prikaz_knjiga, #brisanje_knjige
-  
+- GUI: WPF projekat, zajednicki Data folder, Observer, AutorDTO, KnjigaDTO
+- #glavni_prozor, #toolbar, #prikaz_autora, #prikaz_knjiga
+- #dodavanje_autora, #izmena_autora, #brisanje_autora  
