@@ -80,6 +80,14 @@ namespace GUI
 
         private void Obrisi_Click(object sender, RoutedEventArgs e)
         {
+            if (SelectedAutor == null)
+            {
+                MessageBox.Show("Izaberite autora kog želite da obrišete!");
+            }
+            else
+            {
+                _autorDao.RemoveAutor(SelectedAutor.Id);
+            }
         }
 
         private void Pretraga_Click(object sender, RoutedEventArgs e)
